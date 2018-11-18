@@ -9,7 +9,7 @@
   <h4 class="text-center">{% trans "Preview your comment" %}</h4>
   <p class="text-center">
     {% trans "Preview your comment for:" %}<br/>
-    <a href="{{ form.target_object.get_absolute_url }}">{{ form.target_object }}</a>
+    <a href="{{ form.target_object.get_absolute_url }}">{{ form.target_object.title }}</a>
   </p>
 </div>
 <div class="row">
