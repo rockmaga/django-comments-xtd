@@ -6,7 +6,7 @@
 {% block title %}{% trans "Comment reply" %}{% endblock %}
 
 {% block header %}
-<a href="{{ comment.content_object.get_absolute_url }}">{{ comment.content_object }}</a>
+<a href="{{ comment.content_object.get_absolute_url }}">{{ comment.content_object.title }}</a>
 {% endblock %}
 
 {% block content %}
