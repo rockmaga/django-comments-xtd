@@ -22,8 +22,8 @@
       <em>{% trans "Empty comment." %}</em>
       {% else %}
       <div class="media-left">
-        <a href="{{ form.cleaned_data.url }}">=
-          {% avatar request.user 66 class="rounded-circle" id"user_avatar" %}
+        <a href="{{ form.cleaned_data.url }}">
+          {% avatar request.user 66 class="rounded-circle" id="user_avatar" %}
         </a>
       </div>
       <div class="media-body">
