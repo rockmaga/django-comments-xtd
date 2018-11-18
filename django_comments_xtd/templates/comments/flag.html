@@ -1,6 +1,6 @@
 {% extends "django_comments_xtd/base.html" %}
 {% load i18n %}
-{% load comments_xtd %}
+{% load comments_xtd avatar_tags %}
 
 {% block title %}{% trans "Flag comment" %}{% endblock %}
 
@@ -16,13 +16,9 @@
     <div class="well well-lg">
       <div class="media">
         <div class="media-left">
-          {% if comment.user_url %}
-          <a href="{{ comment.user_url }}">
-            {{ comment.user_email|xtd_comment_gravatar }}
-          </a>
-          {% else %}
-          {{ comment.user_email|xtd_comment_gravatar }}
-          {% endif %}
+          <a href="{% url 'user:mega' comment.user.pk %}" >
+              {% avatar comment.user 66 class="rounded-circle" id="user_avatar" %}
+              </a>
         </div>
         <div class="media-body">
           <h6 class="media-heading">
