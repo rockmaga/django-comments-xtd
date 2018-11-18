@@ -2,12 +2,13 @@
 {% load i18n %}
 {% load comments %}
 {% load comments_xtd %}
+{% load avatar_tags %}
 
 {% for item in comments %}
 {% if item.comment.level == 0 %}
 <li class="media">{% else %}<div class="media">{% endif %}
   <a name="c{{ item.comment.id }}"></a>
-  <div class="media-left">{{ item.comment.user_email|xtd_comment_gravatar }}</div>
+  <div class="media-left">{% avatar item.comment.user 66 class="rounded-circle" id="user_avatar" %}</div>
   <div class="media-body">
     <div class="comment">
       <h6 class="media-heading">
