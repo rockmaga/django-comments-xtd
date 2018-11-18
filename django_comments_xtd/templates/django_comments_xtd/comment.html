@@ -1,10 +1,13 @@
 {% load i18n %}
 {% load comments %}
-{% load comments_xtd %}
+{% load comments_xtd  avatar_tags %}
 
 <li id="c{{ comment.id }}" class="media">
   <a name="c{{ comment.id }}"></a>
-  <div class="media-left">{{ comment.user_email|xtd_comment_gravatar }}</div>
+  <div class="media-left">
+    <a href="{% url 'user:mega' comment.user.pk %}" >
+              {% avatar comment.user 66 class="rounded-circle" id="user_avatar" %}
+              </a></div>
   <div class="media-body">
     <div class="comment">
       <h6 class="media-heading">
